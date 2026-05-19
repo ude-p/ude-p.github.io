@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Prince Ude | Engineering</title>
+  <title>Prince Ude | Systems & Infrastructure Engineer</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #ffffff;
-      color: #1a1a1a;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      background-color: #fcfcfc;
+      color: #1f2937;
+    }
+    
+    .code-font {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
 
     a {
       text-decoration: underline;
-      text-decoration-color: #d1d5db;
-      text-underline-offset: 4px;
-      transition: text-decoration-color 0.2s;
+      text-decoration-color: #9ca3af;
+      text-underline-offset: 3px;
+      transition: all 0.15s ease;
     }
 
     a:hover {
-      text-decoration-color: #111827;
+      text-decoration-color: #2563eb;
+      color: #2563eb;
     }
 
     .nav-link {
@@ -34,144 +37,135 @@
 
     .nav-link:hover {
       color: #111827;
+      text-decoration: underline;
+      text-decoration-color: #111827;
     }
   </style>
 </head>
 
-<body class="selection:bg-gray-200">
+<body class="selection:bg-blue-100 antialiased">
 
-  <!-- Header -->
-  <nav class="w-full border-b border-gray-100">
-    <div class="max-w-[800px] mx-auto flex justify-between items-center px-6 py-5">
-      <span class="text-lg font-semibold tracking-tight">
-        Prince Ude
-      </span>
-
-      <div class="flex gap-6 items-center text-sm">
-        <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="#blog">Blog</a>
-        <a class="nav-link" href="/assets/resume.pdf" target="_blank">Resume</a>
-        <a class="nav-link" href="https://github.com/yourusername" target="_blank">GitHub</a>
-        <a class="nav-link" href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+  <!-- Main Container -->
+  <div class="w-full min-h-screen px-8 md:px-16 py-8 bg-white">
+    
+    <!-- Header / Brand Banner -->
+    <header class="border-b border-gray-200 py-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+      <div>
+        <h1 class="text-xl font-bold tracking-tight text-gray-900 code-font">PRINCE_UDE</h1>
+        <p class="text-xs text-gray-500 code-font mt-0.5">Platform & Backend Engineering</p>
       </div>
-    </div>
-  </nav>
 
-  <main class="max-w-[800px] mx-auto px-6">
+      <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm code-font font-medium">
+        <a class="nav-link" href="#projects">./projects</a>
+        <a class="nav-link" href="#blog">./blog</a>
+        <a class="nav-link" href="/assets/Ude_Prince_Resume.pdf" target="_blank">resume.pdf</a>
+        <a class="nav-link" href="https://github.com/ude-p" target="_blank">github</a>
+        <a class="nav-link" href="https://linkedin.com/in/prince-ude" target="_blank">linkedin</a>
+      </nav>
+    </header>
 
-    <!-- Intro -->
-    <section class="py-12 md:py-16">
-      <p class="text-xl leading-relaxed text-gray-800 max-w-2xl">
-        Backend and infrastructure engineer working mostly with Go,
-        Linux, Kubernetes, realtime systems, and observability.
-        I like building systems where networking, runtime behaviour,
-        deployment, and production debugging all matter.
-      </p>
-    </section>
+    <main>
+      <!-- Engineering Profile -->
+      <section class="py-10 border-b border-gray-100">
+        <p class="text-lg leading-relaxed text-gray-800">
+          I am a backend and infrastructure engineer specializing in Go, Linux systems, Kubernetes, and high-performance real-time networking. I focus on low-allocation runtimes, telemetry ingestion pipelines, and designing predictable, deterministic distributed systems.
+        </p>
+      </section>
 
-    <!-- Projects -->
-    <section class="pb-14" id="projects">
+      <!-- Projects Section -->
+      <section class="py-10" id="projects">
+        <h2 class="text-sm font-bold tracking-wider text-gray-400 uppercase code-font mb-6">
+          Selected Projects
+        </h2>
 
-      <h2 class="text-2xl font-semibold tracking-tight text-gray-900 mb-8">
-        Projects
-      </h2>
+        <div class="space-y-8">
 
-      <div class="space-y-10">
-
-        <!-- Cash.io -->
-        <div class="space-y-3">
-          <h3 class="text-lg font-semibold">
-            Cash.io
-          </h3>
-
-          <p class="text-gray-700 leading-relaxed">
-            Agar.io-style multiplayer game platform built around Go,
-            WebSockets, protobuf snapshots, room state fan-out,
-            profiling, and Linux-based deployment workflows.
-          </p>
-
-          <div class="pt-1 text-sm">
-            <a href="#">View details</a>
+          <!-- Cash.io -->
+          <div class="group">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+              <h3 class="text-lg font-bold text-gray-900">
+                <a href="#">Cash.io</a>
+              </h3>
+              
+            </div>
+            <p class="text-gray-700 mt-2 leading-relaxed text-md">
+              Agar.io-style multiplayer game infrastructure handling real-time authorization and room state fan-out. Developed custom protobuf serialization layers to eliminate JSON encoding allocation bottlenecks under intense network synchronization bursts.
+            </p>
           </div>
-        </div>
 
-        <!-- Routenex -->
-        <div class="space-y-3">
-          <h3 class="text-lg font-semibold">
-            Routenex
-          </h3>
-
-          <p class="text-gray-700 leading-relaxed">
-            Fleet management and telemetry platform for GPS tracking,
-            geofencing, alerts, reports, and vehicle telemetry ingestion.
-          </p>
-
-          <div class="pt-1 text-sm">
-            <a href="#">View details</a>
+          <!-- Routenex -->
+          <div class="group">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+              <h3 class="text-lg font-bold text-gray-900">
+                <a href="#">Routenex</a>
+              </h3>
+              
+            </div>
+            <p class="text-gray-700 mt-2 leading-relaxed text-md">
+              High-throughput fleet management and telemetry ingest platform. Built robust pipelines capable of processing continuous geo-coordinate streams into time-series instances with automated geofencing alerting.
+            </p>
           </div>
-        </div>
 
-        <!-- KubeOps -->
-        <div class="space-y-3">
-          <h3 class="text-lg font-semibold">
-            KubeOps
-          </h3>
-
-          <p class="text-gray-700 leading-relaxed">
-            Go-based Kubernetes operations tooling for deployment inspection,
-            rollout diagnostics, service health checks, and observability
-            pipelines across self-managed clusters.
-          </p>
-
-          <div class="pt-1 text-sm">
-            <a href="#">View details</a>
+          <!-- KubeOps -->
+          <div class="group">
+            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+              <h3 class="text-lg font-bold text-gray-900">
+                <a href="#">KubeOps</a>
+              </h3>
+              
+            </div>
+            <p class="text-gray-700 mt-2 leading-relaxed text-md">
+              Internal operational control plane tooling. Implemented custom Kubernetes reconciliation loops using <span class="code-font text-sm bg-gray-100 px-1 text-red-700 font-semibold rounded">controller-runtime</span> to track workload lifecycle dynamics, rollout verification, and automated cluster diagnostics.
+            </p>
           </div>
+
         </div>
+      </section>
 
-      </div>
-    </section>
+      <!-- Technical Publications / Blog -->
+      <section class="py-10 border-t border-gray-200" id="blog">
+        <h2 class="text-sm font-bold tracking-wider text-gray-400 uppercase code-font mb-6">
+          Technical Writing
+        </h2>
 
-    <!-- Technical Blog -->
-    <section class="pb-20 border-t border-gray-100 pt-12" id="blog">
+        <div class="divide-y divide-gray-100 border-b border-gray-100 text-md">
 
-      <h2 class="text-2xl font-semibold tracking-tight text-gray-900 mb-6">
-        Technical Blog
-      </h2>
+          <div class="py-3 flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+            <a class="text-gray-800 font-medium" href="#">
+              Profiling gorilla/websocket fan-out bottlenecks in Go
+            </a>
+            
+          </div>
 
-      <div class="space-y-3">
+          <div class="py-3 flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+            <a class="text-gray-800 font-medium" href="#">
+              Protobuf vs JSON for realtime synchronization
+            </a>
+            
+          </div>
 
-        <div>
-          <a class="text-gray-800 hover:text-black w-fit"
-             href="#">
-            Profiling gorilla/websocket fan-out bottlenecks in Go
-          </a>
+          <div class="py-3 flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+            <a class="text-gray-800 font-medium" href="#">
+              OpenTelemetry, Grafana Cloud, and Pyroscope for Go services
+            </a>
+            
+          </div>
+
+          <div class="py-3 flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+            <a class="text-gray-800 font-medium" href="#">
+              Notes on running backend services on self-managed Linux infrastructure
+            </a>
+            
+          </div>
+
         </div>
+      </section>
+    </main>
 
-        <div>
-          <a class="text-gray-800 hover:text-black w-fit"
-             href="#">
-            Protobuf vs JSON for realtime synchronization
-          </a>
-        </div>
+    
 
-        <div>
-          <a class="text-gray-800 hover:text-black w-fit"
-             href="#">
-            OpenTelemetry, Grafana Cloud, and Pyroscope for Go services
-          </a>
-        </div>
-
-        <div>
-          <a class="text-gray-800 hover:text-black w-fit"
-             href="#">
-            Notes on running backend services on self-managed Linux infrastructure
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
+  </div>
 
 </body>
 </html>
+
