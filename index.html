@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>Prince Ude | Systems & Infrastructure Engineer</title>
+  <title>Prince Ude | Backend and Infrastructure Engineer</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -18,27 +18,49 @@
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
 
-    a {
+    a[href] {
+      color: #0000ee;
       text-decoration: underline;
-      text-decoration-color: #9ca3af;
+      text-decoration-color: currentColor;
       text-underline-offset: 3px;
       transition: all 0.15s ease;
     }
 
-    a:hover {
+    a[href]:hover {
       text-decoration-color: #2563eb;
       color: #2563eb;
     }
 
-    .nav-link {
-      text-decoration: none;
+    a.nav-link {
       color: #4b5563;
+      text-decoration: none;
     }
 
-    .nav-link:hover {
+    a.nav-link.external-link {
+      color: #0000ee;
+      text-decoration: underline;
+      text-decoration-color: currentColor;
+    }
+
+    a.nav-link:hover {
       color: #111827;
       text-decoration: underline;
       text-decoration-color: #111827;
+    }
+
+    a.nav-link.external-link:hover {
+      color: #2563eb;
+      text-decoration-color: #2563eb;
+    }
+
+    a.article-link {
+      color: #1f2937;
+      text-decoration-color: #9ca3af;
+    }
+
+    a.article-link:hover {
+      color: #2563eb;
+      text-decoration-color: #2563eb;
     }
   </style>
 </head>
@@ -52,15 +74,15 @@
     <header class="border-b border-gray-200 py-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
       <div>
         <h1 class="text-xl font-bold tracking-tight text-gray-900 code-font">PRINCE UDE</h1>
-        <p class="text-xs text-gray-500 code-font mt-0.5">Platform & Backend Engineering</p>
+        <p class="text-xs text-gray-500 code-font mt-0.5">Backend and Infrastructure Engineering</p>
       </div>
 
       <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm code-font font-medium">
         <a class="nav-link" href="#projects">./projects</a>
         <a class="nav-link" href="#blog">./blog</a>
-        <a class="nav-link" href="/assets/Ude_Prince_Resume.pdf" target="_blank">resume.pdf</a>
-        <a class="nav-link" href="https://github.com/ude-p" target="_blank">github</a>
-        <a class="nav-link" href="https://linkedin.com/in/prince-ude" target="_blank">linkedin</a>
+        <a class="nav-link external-link" href="/assets/Ude_Prince_Resume.pdf" target="_blank">resume.pdf</a>
+        <a class="nav-link external-link" href="https://github.com/ude-p" target="_blank">github</a>
+        <a class="nav-link external-link" href="https://linkedin.com/in/prince-ude" target="_blank">linkedin</a>
       </nav>
     </header>
 
@@ -78,47 +100,92 @@
           Selected Projects
         </h2>
 
-        <div class="space-y-8">
+        <div class="space-y-10 max-w-5xl">
 
           <!-- Cash.io -->
           <div class="group">
             <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
               <h3 class="text-lg font-bold text-gray-900">
-                <a href="#">Cash.io</a>
+                Cash.io
               </h3>
-              
+
             </div>
             <p class="text-gray-700 mt-2 leading-relaxed text-md">
-                Agar.io-style multiplayer game infrastructure handling realtime player synchronization and room state fan-out. Used protobuf-go-lite generated schemas for low-overhead snapshot synchronization during large websocket broadcasts.
+              Agar.io-style multiplayer game infrastructure handling realtime player synchronization and room state
+              fan-out. Used protobuf-go-lite generated schemas for low-overhead snapshot synchronization during large
+              websocket broadcasts.
             </p>
-       
-            </p>
+            <dl class="mt-4 space-y-2 text-sm text-gray-700">
+              <div class="grid gap-1 sm:grid-cols-[5.5rem_1fr] sm:gap-4">
+                <dt class="code-font text-xs font-bold text-gray-400">Link</dt>
+                <dd class="leading-relaxed"><a href="https://playcash.io/" target="_blank" rel="noopener noreferrer">playcash.io</a></dd>
+              </div>
+              <div class="grid gap-1 sm:grid-cols-[5.5rem_1fr] sm:gap-4">
+                <dt class="code-font text-xs font-bold text-gray-400">Stack</dt>
+                <dd class="leading-relaxed">Go, gorilla/websocket, Protocol Buffers, OpenTelemetry, Pyroscope, pprof</dd>
+              </div>
+              <div class="grid gap-1 sm:grid-cols-[5.5rem_1fr] sm:gap-4">
+                <dt class="code-font text-xs font-bold text-gray-400">Metrics</dt>
+                <dd class="leading-relaxed">600k+ players; 500-1000 concurrent players per node; ~42ms p99 tick latency at 60 ticks/sec</dd>
+              </div>
+            </dl>
           </div>
 
           <!-- Routenex -->
           <div class="group">
             <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
               <h3 class="text-lg font-bold text-gray-900">
-                <a href="#">Routenex</a>
+                Routenex
               </h3>
-              
+
             </div>
             <p class="text-gray-700 mt-2 leading-relaxed text-md">
-              High-throughput fleet management and telemetry ingest platform. Built robust pipelines capable of processing continuous geo-coordinate streams into time-series instances with automated geofencing alerting.
+              High-throughput fleet management and telemetry ingest platform. Built robust pipelines capable of
+              processing continuous geo-coordinate streams into time-series instances with automated geofencing
+              alerting.
             </p>
+            <dl class="mt-4 space-y-2 text-sm text-gray-700">
+              <div class="grid gap-1 sm:grid-cols-[5.5rem_1fr] sm:gap-4">
+                <dt class="code-font text-xs font-bold text-gray-400">Link</dt>
+                <dd class="leading-relaxed"><a href="https://routenex.io/" target="_blank" rel="noopener noreferrer">routenex.io</a></dd>
+              </div>
+              <div class="grid gap-1 sm:grid-cols-[5.5rem_1fr] sm:gap-4">
+                <dt class="code-font text-xs font-bold text-gray-400">Stack</dt>
+                <dd class="leading-relaxed">Go, k3s, TimescaleDB, PostgreSQL, Redis, WebSockets, GitHub Actions</dd>
+              </div>
+              <div class="grid gap-1 sm:grid-cols-[5.5rem_1fr] sm:gap-4">
+                <dt class="code-font text-xs font-bold text-gray-400">Metrics</dt>
+                <dd class="leading-relaxed">3.5k+ concurrently online vehicles; millions of telemetry writes into TimescaleDB/PostgreSQL</dd>
+              </div>
+            </dl>
           </div>
 
-          <!-- KubeOps -->
+          <!-- App Deployment Operator -->
           <div class="group">
             <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
               <h3 class="text-lg font-bold text-gray-900">
-                <a href="#">KubeOps</a>
+                App Deployment Operator
               </h3>
-              
+
             </div>
             <p class="text-gray-700 mt-2 leading-relaxed text-md">
-              Internal operational control plane tooling. Implemented custom Kubernetes reconciliation loops using <span class="code-font text-sm bg-gray-100 px-1 text-red-700 font-semibold rounded">controller-runtime</span> to track workload lifecycle dynamics, rollout verification, and automated cluster diagnostics.
+              Kubernetes operator for declarative application deployment workflows. Implemented custom reconciliation
+              loops using controller-runtime to manage workload lifecycle state, rollout verification, and production deployment automation.
             </p>
+            <dl class="mt-4 space-y-2 text-sm text-gray-700">
+              <div class="grid gap-1 sm:grid-cols-[5.5rem_1fr] sm:gap-4">
+                <dt class="code-font text-xs font-bold text-gray-400">Link</dt>
+                <dd class="leading-relaxed"><a href="https://github.com/ude-p/deploymentoperator" target="_blank" rel="noopener noreferrer">github.com/ude-p/deploymentoperator</a></dd>
+              </div>
+              <div class="grid gap-1 sm:grid-cols-[5.5rem_1fr] sm:gap-4">
+                <dt class="code-font text-xs font-bold text-gray-400">Stack</dt>
+                <dd class="leading-relaxed">Go, Kubernetes, controller-runtime, AppDeployment CRD, Helm, GitHub Actions</dd>
+              </div>
+              <div class="grid gap-1 sm:grid-cols-[5.5rem_1fr] sm:gap-4">
+                <dt class="code-font text-xs font-bold text-gray-400">Metrics</dt>
+                <dd class="leading-relaxed">Automates Deployment, Service, and ConfigMap lifecycle management with rollout health checks and rollback handling</dd>
+              </div>
+            </dl>
           </div>
 
         </div>
@@ -133,40 +200,29 @@
         <div class="divide-y divide-gray-100 border-b border-gray-100 text-md">
 
           <div class="py-3 flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
-            <a class="text-gray-800 font-medium" href="https://dev.to/udep/profiling-gorillawebsocket-fan-out-bottlenecks-in-go-4c9p" target="_blank" rel="noopener noreferrer">
+            <a class="article-link font-medium"
+              href="https://dev.to/udep/profiling-gorillawebsocket-fan-out-bottlenecks-in-go-4c9p" target="_blank"
+              rel="noopener noreferrer">
               Profiling gorilla/websocket fan-out bottlenecks in Go
             </a>
-            
+
           </div>
 
           <div class="py-3 flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
-            <a class="text-gray-800 font-medium" href="#">
-              Protobuf vs JSON for realtime synchronization
+            <a class="article-link font-medium" href="#">
+              Running k3s on self-managed infrastructure in production
             </a>
-            
-          </div>
 
-          <div class="py-3 flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
-            <a class="text-gray-800 font-medium" href="#">
-              OpenTelemetry, Grafana Cloud, and Pyroscope for Go services
-            </a>
-            
-          </div>
-
-          <div class="py-3 flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
-            <a class="text-gray-800 font-medium" href="#">
-              Notes on running backend services on self-managed Linux infrastructure
-            </a>
-            
           </div>
 
         </div>
       </section>
     </main>
 
-    
+
 
   </div>
 
 </body>
+
 </html>
