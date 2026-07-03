@@ -169,21 +169,34 @@
 
             </div>
             <p class="text-gray-700 mt-2 leading-relaxed text-md">
-              Kubernetes operator for declarative application deployment workflows. Implemented custom reconciliation
-              loops using controller-runtime to manage workload lifecycle state, rollout verification, and production deployment automation.
+              Kubernetes operator for declarative app deployment. It reconciles a custom
+              `Deployment` CRD into Namespaces, ConfigMaps, Services, Deployments, and
+              Ingresses, with variable substitution, scope targeting, and pruning of
+              removed resources.
             </p>
             <dl class="mt-4 space-y-2 text-sm text-gray-700">
               <div class="grid gap-1 sm:grid-cols-[5.5rem_1fr] sm:gap-4">
                 <dt class="code-font text-xs font-bold text-gray-400">Link</dt>
-                <dd class="leading-relaxed"><a href="https://github.com/ude-p/appdeploy" target="_blank" rel="noopener noreferrer">github.com/ude-p/appdeploy</a></dd>
+                <dd class="leading-relaxed">
+                  <a href="https://github.com/ude-p/appdeploy" target="_blank" rel="noopener
+                  noreferrer">
+                    github.com/ude-p/appdeploy
+                  </a>
+                </dd>
               </div>
               <div class="grid gap-1 sm:grid-cols-[5.5rem_1fr] sm:gap-4">
                 <dt class="code-font text-xs font-bold text-gray-400">Stack</dt>
-                <dd class="leading-relaxed">Go, Kubernetes, controller-runtime, AppDeployment CRD, Helm, GitHub Actions</dd>
+                <dd class="leading-relaxed">
+                  Go, controller-runtime, Kubernetes API machinery, CRDs, GitHub Actions,
+                  GHCR
+                </dd>
               </div>
               <div class="grid gap-1 sm:grid-cols-[5.5rem_1fr] sm:gap-4">
-                <dt class="code-font text-xs font-bold text-gray-400">Metrics</dt>
-                <dd class="leading-relaxed">Automates Deployment, Service, and ConfigMap lifecycle management with rollout health checks and rollback handling</dd>
+                <dt class="code-font text-xs font-bold text-gray-400">Scope</dt>
+                <dd class="leading-relaxed">
+                  Single-CRD deployment workflow with automated release assets and
+                  controller image publishing
+                </dd>
               </div>
             </dl>
           </div>
